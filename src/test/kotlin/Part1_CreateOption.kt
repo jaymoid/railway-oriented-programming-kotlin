@@ -299,10 +299,11 @@ class Part1_CreateOption : StringSpec({
 
     --------------------------------------------------------------------
 
-    7. flatTap is like flatmap, but it ignores the result of the function that
-    is passed to this.
+    7. flatTap is like flatMap, but it ignores the result of the function that is passed to it.
 
-    This is handy when you want to perform an action but you want to ignore the result.
+    This is handy when you want to perform an action but you want to ignore the result, and keep what you had before.
+
+    The test will hopefully explain it further.
      */
 
     "flatTap" {
