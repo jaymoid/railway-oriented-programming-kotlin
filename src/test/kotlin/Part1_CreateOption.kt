@@ -26,7 +26,10 @@ import io.kotlintest.specs.StringSpec
 
     Are you ready? ALL ABOARD...
 
-    1. Implement "Option" as a sealed Class to represent a datatype which may or may not have a value.
+    You'll Implement "Option" as a sealed Class to represent a datatype which may or may not have a value.
+
+    To get started uncomment the code in the first test, implement the code in the Option class, and
+    then move on
 
     Scroll down for hint/s tips! if you get stuck.
 
