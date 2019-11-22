@@ -12,6 +12,8 @@ WELCOME TO PART 2 :)
 
 2. Uncomment the lines in the tests and make them pass!
 
+If you get stuck, take a peek at the solutions in
+
 */
 class Part2_UseOption : StringSpec({
 

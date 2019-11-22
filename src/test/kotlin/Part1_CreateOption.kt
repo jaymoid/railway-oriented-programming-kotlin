@@ -294,10 +294,19 @@ class Part1_CreateOption : StringSpec({
     */
 
 
-    "flatTap" {
-        val flatTapped = Option.Some("Hello World").flatTap{ Option.Some(it.length) }
 
-        flatTapped shouldBe Option.Some("Hello World")
+    /*
+
+    flatTap is like flatmap, but it ignores the result of the function that
+    is passed to this.
+
+    Have a go!
+     */
+
+    "flatTap" {
+//        val flatTapped = Option.Some("Hello World").flatTap{ Option.Some(it.length) }
+//
+//        flatTapped shouldBe Option.Some("Hello World")
 
     }
 })

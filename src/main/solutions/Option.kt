@@ -1,11 +1,19 @@
 /*
-    This file contains the solution/answers for creating your Option data type.
+    Complete the option class...
 
+    Follow the instructions in src/test/OptionTest.kt
 */
 sealed class Option<out A> {
 
+
     // 1
     data class Some<out A>(val value: A) : Option<A>() {
+        override fun <B> flatTap(f: (A) -> Option<B>): Option<A> {
+            f(value)
+            return Some(value)
+        }
+
+
         override fun <B> fold(ifNone: () -> B, ifSome: (A) -> B): B = ifSome(value)
 
         // 3
@@ -20,7 +28,6 @@ sealed class Option<out A> {
 
     // 2
     internal object None : Option<Nothing>() {
-        override fun <B> fold(ifNone: () -> B, ifSome: (Nothing) -> B): B = ifNone()
 
         // 3
         override fun <B> map(f: (Nothing) -> B): Option<B> = None
@@ -30,6 +37,13 @@ sealed class Option<out A> {
 
         // 5
         override fun filter(p: (Nothing) -> Boolean): Option<Nothing> = None
+
+        // 6
+        override fun <B> fold(ifNone: () -> B, ifSome: (Nothing) -> B): B = ifNone()
+
+        // 7
+        override fun <B> flatTap(f: (Nothing) -> Option<B>): Option<Nothing> = None
+
     }
 
     // 3
@@ -43,4 +57,10 @@ sealed class Option<out A> {
 
     // 6
     abstract fun <B> fold(ifNone: () -> B, ifSome: (A) -> B): B
+
+    // 7
+    abstract fun <B> flatTap(f: (A) -> Option<B>): Option<A>
+
+
 }
+
