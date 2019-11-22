@@ -29,7 +29,7 @@ import io.kotlintest.specs.StringSpec
     You'll Implement "Option" as a sealed Class to represent a datatype which may or may not have a value.
 
     To get started uncomment the code in the first test, implement the code in the Option class, and
-    then move on
+    then move on.
 
     Scroll down for hint/s tips! if you get stuck.
 
@@ -236,6 +236,8 @@ class Part1_CreateOption : StringSpec({
 
     Monad, is, you guessed it, another maths term from Category Theory.
 
+    --------------------------------------------------------------------
+
     5. Let's filter some data out of your Option.
     */
     "Filter an optional" {
@@ -258,7 +260,9 @@ class Part1_CreateOption : StringSpec({
     But something to think about - notice how the filter tests are kinda doing the same thing as the flatMap.
     In the flatMap tests we returned None if the number was odd. Monads are pretty powerful and flexible!
 
-    5. Fold is a function used to "break down" a data type to another single value, using the provided function.
+    --------------------------------------------------------------------
+
+    6. Fold is a function used to "break down" a data type to another single value, using the provided function.
 
     Again these are pretty powerful functions. You can do many things in a fold.... Except that!? Why would you even
     think that.
@@ -291,25 +295,28 @@ class Part1_CreateOption : StringSpec({
 
     This is the first function that returns a non Option type, however, you could still return an Option if you wanted.
 
-     You made it to the end of implementing tons of cool FP stuff in a Option data type!
-
-     Next, let's put it to use and clean up some code spaghetti!
-    */
 
 
+    --------------------------------------------------------------------
 
-    /*
-
-    flatTap is like flatmap, but it ignores the result of the function that
+    7. flatTap is like flatmap, but it ignores the result of the function that
     is passed to this.
 
-    Have a go!
+    This is handy when you want to perform an action but you want to ignore the result.
      */
 
     "flatTap" {
-//        val flatTapped = Option.Some("Hello World").flatTap{ Option.Some(it.length) }
-//
-//        flatTapped shouldBe Option.Some("Hello World")
+        // val flatTapped = Option.Some("Hello World").flatTap{ Option.Some(it.length) }
 
+        // flatTapped shouldBe Option.Some("Hello World")
     }
+
+
+    /*
+    You made it to the end of implementing tons of cool FP stuff in a Option data type!
+
+    Next, let's put it to use and clean up some code spaghetti!
+
+    Head over to src/test/Part2_UseOption.kt
+    */
 })
