@@ -22,5 +22,6 @@ This Kata gets you to:
 
 ## Why have I made this Kata?
 
-Functional programming can seem daunting. The field of study is massive, 
+Functional programming can seem daunting. The field of study is massive, so I wanted to introduce some of the concepts with some simple examples and code.
+
 # railway-oriented-programming-kotlin
