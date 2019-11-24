@@ -1,18 +1,19 @@
 import io.kotlintest.data.forall
-import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import io.kotlintest.tables.row
 
 /*
+
+
 WELCOME TO PART 2 :)
 
-0. Convert the code in "src/main/OptionalUseCase.kt" to kotlin
+* Convert the code in "src/main/OptionalUseCase.kt" to use your Option type.
 
-1. The functions used by the usecase shoukd return optionals, instead of booleans/throwing exceptions, etc.
+* The functions used by the usecase shoukd return option<...>, instead of booleans/throwing exceptions, etc.
 
-2. Uncomment the lines in the tests and make them pass!
+* Uncomment the lines in the tests and make them pass!
 
-If you get stuck, take a peek at the solutions in
+If you get stuck, take a peek at the solution in solutions/ExecuteUseCaseFunctional.kt
 
 */
 class Part2_UseOption : StringSpec({

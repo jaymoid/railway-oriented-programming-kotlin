@@ -56,8 +56,6 @@ class Part1_CreateOption : StringSpec({
 
     a) The Some class needs to be a "data class", inside the Option class.
 
-    data class Some<out A>(private val value: A) : Option<A>()
-
     b) the Generic type will be <out A>
 
     c) The Some class needs to have one instance variable, of type A, make the variable private.
@@ -86,7 +84,7 @@ class Part1_CreateOption : StringSpec({
 
     a) make None as an 'object' in Optional, (as opposed as a class or data class)
 
-    b) it is of type Option<Nothing>()
+    b) The None object will have the type: Option<Nothing>
 
     If you're still stuck don't worry check the solution folder and see if it makes sense.
     Copy over the solution and move on, don't sweat it.
@@ -119,7 +117,7 @@ class Part1_CreateOption : StringSpec({
     /*
     3.  Map is handle little function that you'll have no doubt used in Kotlin already on lists and other types.
 
-    But let's implement it in our Option data type.
+    So lets implement it in our Option data type.
 
     Map is a function, that takes a function of type (A) -> B.
 
@@ -159,7 +157,7 @@ class Part1_CreateOption : StringSpec({
     c) If you have no value in the Option, then you can only reply with one thing, yup... None!
 
     If you're still stuck don't worry check the solution folder and see if it makes sense.
-    Copy over the solution and move on, don't sweat it.
+    Copy over the solution and move on.
 
     ~~~~~ TERMINOLOGY INTERLUDE ~~~~
 
@@ -170,12 +168,12 @@ class Part1_CreateOption : StringSpec({
     If you got your map working, your Option data type is now a Functor! ... FUNC YEAH!
 
     Functor is a maths term from a field called Category Theory. The name might sound weird or scary, you might be
-    put off when you come across these terms, they are usually simple concepts, with a very precise word. And you just
-    made the hell outta one! Good work.
+    put off when you come across these terms, they are usually simple concepts but with a very precise word...
+    And you just made the hell outta one! Good work.
 
     ~~~~ WHY DO I NEED TO KNOW THAT?! ~~~~
 
-    You don't! But the more you hang around the functional programmers, the more likely they are to mention them.
+    You don't! But the more you hang around the functional programmers, the more likely they are to mention these terms.
 
     Why do they use these complex sounding words? Because they accurately describe something.
 
@@ -187,9 +185,9 @@ class Part1_CreateOption : StringSpec({
 
     --------------------------------------------------------------------
 
-    4.  FlatMap is another one you've probably seen before
+    4.  FlatMap is another one you've probably seen before too.
 
-        But let's implement it in our Option data type.
+        So lets implement it in our Option data type.
 
         FlatMap is also often called "bind" in other languages.
     */
@@ -215,7 +213,7 @@ class Part1_CreateOption : StringSpec({
         }
     }
 
-    /* ~~~~~ HINTS / TIPS:
+    /* ~~~~~ HINTS / TIPS  ~~~~~
 
     a) Add the following abstract function to Option:
 
@@ -224,7 +222,7 @@ class Part1_CreateOption : StringSpec({
     ... and then implement it in your Some and None classes.
 
     b) f is the function you apply to value in Option, you don't need to wrap it in an Option constructor this time,
-        because the function you get
+        because the function that is the parameter to flatMap will return an Option
 
     c) If you have nothing in the Option, then you can only reply with one thing, yup... None!
 
@@ -258,7 +256,7 @@ class Part1_CreateOption : StringSpec({
     No Hints and tips this time, you're on your own.
 
     But something to think about - notice how the filter tests are kinda doing the same thing as the flatMap.
-    In the flatMap tests we returned None if the number was odd. Monads are pretty powerful and flexible!
+    In the flatMap tests we returned None if the number was odd. Monads are pretty powerful!
 
     --------------------------------------------------------------------
 
@@ -283,7 +281,7 @@ class Part1_CreateOption : StringSpec({
     A fold is a function that breaks down the structure of a data type using the supplied function, to a resulting
     single value. The single value can be of a different type than the original type contained within the type.
 
-    A fold is a implementation of a CataMorphism.
+    A fold is a implementation of a Catamorphism.
 
     In Greek, "Cata" means 'down', and "morphism" means 'form' or 'type'.
 
@@ -294,8 +292,6 @@ class Part1_CreateOption : StringSpec({
     N.B. 'B' could be anything, a List<String>, another Option<A>, or just a Int!
 
     This is the first function that returns a non Option type, however, you could still return an Option if you wanted.
-
-
 
     --------------------------------------------------------------------
 
@@ -312,11 +308,18 @@ class Part1_CreateOption : StringSpec({
         // flatTapped shouldBe Option.Some("Hello World")
     }
 
-
     /*
-    You made it to the end of implementing tons of cool FP stuff in a Option data type!
 
-    Next, let's put it to use and clean up some code spaghetti!
+    ~~~~~ HINTS / TIPS  ~~~~~
+    a) the function flatTap takes is of type  (A) -> Option<B>
+
+    b) your flatTap will return: Option<B>
+
+    --------------------------------------------------------------------
+
+    You made it to the end of implementing tons of cool FP stuff in a Option data type! Great work.
+
+    Next, let's put it to use and clean up some code spaghetti...
 
     Head over to src/test/Part2_UseOption.kt
     */

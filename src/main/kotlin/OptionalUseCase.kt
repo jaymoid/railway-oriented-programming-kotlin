@@ -2,6 +2,7 @@ package ExecuteUseCaseWithOption
 
 import java.lang.RuntimeException
 
+// vv Change my return type to Option<String> vv
 fun executeUseCase(requestId: Int): String {
 
     var request: Request? = receiveRequest(requestId)
@@ -36,6 +37,7 @@ fun executeUseCase(requestId: Int): String {
 
 data class Request(var email: String, val firstName: String, val surname: String, val id: Int)
 
+// vv Change my return type vv
 fun receiveRequest(requestId: Int): Request? =
     validRequests.find { it.id == requestId }
 
@@ -49,11 +51,12 @@ val validRequests = listOf(
     Request("", "Prince", "", 7777)
 )
 
-
+// vv Change my return type vv
 fun canonicalizeEmail(request: Request): Unit {
     request.email = "${request.firstName}.${request.surname}@railway.com"
 }
 
+// vv Change my return type vv
 fun validateRequest(request: Request): Boolean =
     with(request) {
         email.isNotEmpty() && firstName.isNotEmpty() && surname.isNotEmpty()
@@ -62,6 +65,8 @@ fun validateRequest(request: Request): Boolean =
 
 val db = Database()
 class Database {
+
+    // vv Change my return type vv
     fun updateDbFromRequest(request: Request): Boolean {
         // not a nice DB, we only persist even Request ids!
         return if (request.id % 2 == 0)
@@ -74,6 +79,7 @@ class DatabaseException(override val message: String?) : RuntimeException(messag
 
 val smtpServer= SMTPServer()
 class SMTPServer {
+    // vv Change my return type vv
     fun sendEmail(email: String): Boolean =
         if ("\\w{1,}\\.\\w{1,}@railway.com$".toRegex().matches(email))
             true // email sent
