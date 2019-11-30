@@ -1,5 +1,4 @@
 import io.kotlintest.assertSoftly
-import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 
 /*
@@ -26,9 +25,9 @@ import io.kotlintest.specs.StringSpec
 
     Are you ready? ALL ABOARD...
 
-    You'll Implement "Option" as a sealed Class to represent a datatype which may or may not have a value.
+    You'll Implement "Option" as a sealed class to represent a datatype which may or may not have a value.
 
-    To get started uncomment the code in the first test, implement the code in the Option class, and
+    To get started uncomment the code in the first test, implement the code in the Option class, make the tests pass and
     then move on.
 
     Scroll down for hint/s tips! if you get stuck.
@@ -189,6 +188,8 @@ class Part1_CreateOption : StringSpec({
 
         So lets implement it in our Option data type.
 
+        FlatMap is a function, that takes a function of type (A) -> Option<B>
+
         FlatMap is also often called "bind" in other languages.
     */
     "FlatMap over an optional" {
@@ -313,7 +314,7 @@ class Part1_CreateOption : StringSpec({
     ~~~~~ HINTS / TIPS  ~~~~~
     a) the function flatTap takes is of type  (A) -> Option<B>
 
-    b) your flatTap will return: Option<B>
+    b) your flatTap will return: Option<A>
 
     --------------------------------------------------------------------
 

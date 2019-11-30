@@ -1,4 +1,4 @@
-package OptionalUseCase
+package OptionUseCase
 
 import DatabaseException
 import Request
@@ -9,7 +9,7 @@ import validRequests
 
 typealias UniqueId = Int
 
-// vv Change my return type to Option or Either<UniqueId> vv
+// vv Change my return type to Optional<UniqueId> vv
 internal fun executeOptionalUseCase(requestId: Int): UniqueId {
 
     var requestEnvelope: RequestEnvelope? = receiveRequest(requestId)

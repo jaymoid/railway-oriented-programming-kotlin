@@ -36,7 +36,7 @@ fun validateRequest(request: Request): Option<Request> =
     }
 
 val db = Database()
-
+cata
 class Database {
 
     fun updateDbFromRequest(request: Request): Option<Request> =

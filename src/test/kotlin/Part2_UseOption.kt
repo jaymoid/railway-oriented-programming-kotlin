@@ -7,7 +7,7 @@ import io.kotlintest.tables.row
 
 WELCOME TO PART 2 :)
 
-* Convert the code in "src/main/OptionalUseCase.kt" to use your Option type.
+* Convert the code in "src/main/OptionUseCase.kt" to use your Option type.
 
 * The functions used by the usecase shoukd return option<...>, instead of booleans/throwing exceptions, etc.
 
@@ -34,5 +34,11 @@ class Part2_UseOption : StringSpec({
     }
 
 })
+
+/*
+
+
+
+ */
 
 private fun <E> List<E>.toRows() = this.map(::row).toTypedArray()
