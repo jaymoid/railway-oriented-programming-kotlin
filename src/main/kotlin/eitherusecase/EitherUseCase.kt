@@ -1,15 +1,22 @@
-package OptionUseCase
+package eitherusecase
 
 import DatabaseException
+import Either
 import Employee
 import Request
 import RequestException
 import UserData
 import log
 
-typealias UniqueId = Int
+sealed class DomainError
+object InvalidRequest : DomainError()
+object DbErrorCannotAddUser : DomainError()
+object DbIsAPotatoError : DomainError()
+object DbErrorCannotCreateEmployee : DomainError()
+object CouldNotSendEmail : DomainError()
 
-// vv Change my return type to Option<Employee> vv
+// vv Change my return type to Either<DomainError,Employee> vv
+// Make use of the Domain Errors types specified above!
 internal fun executeOptionalUseCase(request: Request): Employee {
 
     var isValidated: Boolean = validateRequest(request)

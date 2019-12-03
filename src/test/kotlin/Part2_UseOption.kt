@@ -1,9 +1,9 @@
 import io.kotlintest.data.forall
 import io.kotlintest.specs.StringSpec
-import io.kotlintest.tables.row
+import optionusecase.executeOptionalUseCase
+import io.kotlintest.shouldBe
 
 /*
-
 
 WELCOME TO PART 2 :)
 
@@ -13,32 +13,35 @@ WELCOME TO PART 2 :)
 
 * Uncomment the lines in the tests and make them pass!
 
-If you get stuck, take a peek at the solution in solutions/ExecuteUseCaseFunctional.kt
+If you get stuck, take a peek at the solution in solutions/OptionUseCaseFunctional.kt
 
 */
+
 class Part2_UseOption : StringSpec({
 
-    "valid requests" {
-        val rows = listOf(222, 666).toRows()
-        forall(*rows) { id: Int ->
-            // UNCOMMENT THIS...
-            // executeUseCase(id) shouldBe Option.Some("OK")
-        }
-    }
+    val validRequests = listOf(
+        UserData(firstName = "Eve", surname = "Jones"),
+        UserData(firstName = "Beel", surname = "Zebub")
+    ).map(::Request).toRows()
 
-    "invalid requests" {
-        forall(*listOf(111, 333, 444, 555, 777).toRows()) { id: Int ->
-            // UNCOMMENT THIS...
-            // executeUseCase(id) shouldBe Option.None
-        }
-    }
+    // Uncomment and make these tests pass...
+    // "valid requests" {
+    //     forall(*validRequests) { r: Request ->
+    //         (executeOptionalUseCase(r) is Option.Some) shouldBe true
+    //     }
+    // }
 
+    val invalidRequests = listOf(
+        UserData(firstName = "", surname = "Wilson"), // invalid, no firstname
+        UserData(firstName = "STEVE", surname = ""), // invalid, no surname
+        UserData(firstName = "Peter", surname = "Fletcher-Harvey-Montgomery"), // DB cant save, surname too long!
+        UserData(firstName = "Sally", surname = "Pools") // DB cant create employee
+    ).map(::Request).toRows()
+
+    // Uncomment and make these tests pass...
+    // "invalid requests" {
+    //     forall(*invalidRequests) { req ->
+    //         executeOptionalUseCase(req) shouldBe Option.None
+    //     }
+    // }
 })
-
-/*
-
-
-
- */
-
-private fun <E> List<E>.toRows() = this.map(::row).toTypedArray()

@@ -301,6 +301,7 @@ class Part1_CreateOption : StringSpec({
     This is handy when you want to perform an action but you want to ignore the result, and keep what you had before.
 
     The test will hopefully explain it further.
+
      */
 
     "flatTap" {
