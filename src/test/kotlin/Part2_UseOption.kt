@@ -5,7 +5,7 @@ import io.kotlintest.shouldBe
 
 /*
 
-WELCOME TO PART 2 :)
+* WELCOME TO PART 2 :)
 
 * Convert the code in "src/main/OptionUseCase.kt" to use your Option type.
 
@@ -13,7 +13,7 @@ WELCOME TO PART 2 :)
 
 * Uncomment the lines in the tests and make them pass!
 
-If you get stuck, take a peek at the solution in solutions/OptionUseCaseFunctional.kt
+* If you get stuck, take a peek at the solution in solutions/OptionUseCaseFunctional.kt
 
 */
 

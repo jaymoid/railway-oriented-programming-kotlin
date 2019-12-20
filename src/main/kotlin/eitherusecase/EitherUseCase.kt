@@ -17,7 +17,7 @@ object CouldNotSendEmail : DomainError()
 
 // vv Change my return type to Either<DomainError,Employee> vv
 // Make use of the Domain Errors types specified above!
-internal fun executeOptionalUseCase(request: Request): Employee {
+internal fun executeEitherUseCase(request: Request): Employee {
 
     var isValidated: Boolean = validateRequest(request)
     if (!isValidated) {

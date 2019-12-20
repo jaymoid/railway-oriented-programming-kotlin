@@ -9,8 +9,14 @@ import log
 
 typealias UniqueId = Int
 
-// vv Change my return type to Option<Employee> vv
-internal fun executeOptionalUseCase(request: Request): Employee {
+/*
+ * This is what the use case looked like before we changed it.
+ *
+ * This is just here for reference.
+ */
+
+// vv Change my return type to Option<Employee> / Either<Employee> vv
+internal fun executeUseCase(request: Request): Employee {
 
     var isValidated: Boolean = validateRequest(request)
     if (!isValidated) {
